@@ -12,11 +12,18 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
-            height: 50vh;
+            /* 🔴 FIX 1: height: 50vh; को min-height: 100vh; से बदला गया */
+            min-height: 100vh; 
             margin: 0;
             background-color: #050505;
             background-size: 400% 400%;
             animation: gradientMove 12s ease infinite;
+            
+            /* 🔴 FIX 2: .main को सेंटर करने के लिए Flexbox जोड़ा गया */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         @keyframes gradientMove {
@@ -90,7 +97,8 @@
             width: 40%;
             border-radius: 30px;
             justify-self: center;
-            margin-top: 7%;
+            /* 🔴 FIX 2: body में Flexbox का उपयोग करने के बाद margin-top हटा दिया गया */
+            margin-top: 0; 
         }
 
         @media (max-width: 768px) {
@@ -102,7 +110,8 @@
             .main {
                 width: 90%;
                 padding: 30px 20px;
-                margin-top: 15%;
+                /* 768px के लिए मार्जिन कम किया गया, क्योंकि body सेंटर कर रही है */
+                margin-top: 0; 
             }
 
             h1 {
@@ -126,7 +135,8 @@
         @media (max-width: 480px) {
             .main {
                 padding: 20px 15px;
-                margin-top: 20%;
+                /* 480px के लिए मार्जिन कम किया गया */
+                margin-top: 0; 
             }
 
             h1 {
